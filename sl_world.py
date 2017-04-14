@@ -29,7 +29,6 @@ class PlanetObject(pygame.sprite.Sprite):
     def calc_abs_pos(self):
         theta = self.angle - self.planet_angle
         self.surf = pygame.transform.rotate(self.orig_surf, -theta * 180 / math.pi)
-        # self.surf.set_colorkey((0, 0, 0))
         x = PLANET_X + self.r * math.sin(theta)
         y = PLANET_Y - self.r * math.cos(theta)
         self.rect = self.surf.get_rect(center=(x, y))
